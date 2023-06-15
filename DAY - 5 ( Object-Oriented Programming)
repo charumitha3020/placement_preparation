@@ -1,0 +1,196 @@
+ (14-06-2023)
+ 
+ 1) Object-Oriented Programming: Design a class hierarchy for a library system.
+ 
+ CODE: 
+ 
+ package shopup;
+import java.util.ArrayList;
+import java.util.List;
+
+class Item {
+    private String title;
+    private String author;
+    private int year;
+
+    public Item(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void displayInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Year: " + year);
+    }
+}
+
+class Nbook extends Item {
+    private String genre;
+
+    public Nbook(String title, String author, int year, String genre) {
+        super(title, author, year);
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Genre: " + genre);
+    }
+}
+
+class Magazine extends Item {
+    private int issueNumber;
+
+    public Magazine(String title, String author, int year, int issueNumber) {
+        super(title, author, year);
+        this.issueNumber = issueNumber;
+    }
+
+    public int getIssueNumber() {
+        return issueNumber;
+    }
+
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Issue Number: " + issueNumber);
+    }
+}
+
+class LibraryMember {
+    private String name;
+    private int memberId;
+    private List<Item> borrowedItems;
+
+    public LibraryMember(String name, int memberId) {
+        this.name = name;
+        this.memberId = memberId;
+        this.borrowedItems = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public List<Item> getBorrowedItems() {
+        return borrowedItems;
+    }
+
+    public void borrowItem(Item item) {
+        borrowedItems.add(item);
+        System.out.println("Item borrowed: " + item.getTitle());
+    }
+
+    public void returnItem(Item item) {
+        borrowedItems.remove(item);
+        System.out.println("Item returned: " + item.getTitle());
+    }
+}
+
+class Project {
+    public static void main(String[] args) {
+        Nbook book = new Nbook("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Fiction");
+        book.displayInfo();
+
+        System.out.println();
+
+        Magazine magazine = new Magazine("National Geographic", "Various Authors", 2022, 5);
+        magazine.displayInfo();
+
+        System.out.println();
+
+        LibraryMember member = new LibraryMember("John Doe",1);
+        member.borrowItem(book);
+        member.borrowItem(magazine);
+
+        System.out.println("\nBorrowed Items by " + member.getName() + ":");
+        for (Item item : member.getBorrowedItems()) {
+            item.displayInfo();
+            System.out.println();
+        }
+
+        member.returnItem(book);
+
+    }
+}
+
+OUTPUT:
+
+Title: The Great Gatsby
+Author: F. Scott Fitzgerald
+Year: 1925
+Genre: Fiction
+
+Title: National Geographic
+Author: Various Authors
+Year: 2022
+Issue Number: 5
+
+Item borrowed: The Great Gatsby
+Item borrowed: National Geographic
+
+Borrowed Items by John Doe:
+Title: The Great Gatsby
+Author: F. Scott Fitzgerald
+Year: 1925
+Genre: Fiction
+
+Title: National Geographic
+Author: Various Authors
+Year: 2022
+Issue Number: 5
+
+Item returned: The Great Gatsby
+
+ 
