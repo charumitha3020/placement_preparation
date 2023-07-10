@@ -1,0 +1,19 @@
+TCS PREPARATION
+
+1) Given a maximum of 100 digit numbers as input, find the difference between the sum of odd and even position digits.
+
+n=input("Enter the numbers: ")
+even=0
+odd=0
+for i in range(0,len(n)):
+    if i%2==0:
+        even+=i
+    else:
+        odd+=i
+print(abs(even-odd))    
+
+
+output:
+Enter the numbers: 1 2 3 4 5 6
+3
+
