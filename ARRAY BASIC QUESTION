@@ -1,0 +1,118 @@
+   ARRAY BASIC QUESTIONS
+1. 	What is an array?
+ Array is a collection of data of same datatype. It is stored in a contiguous memory location.
+
+2. 	What are the different types of arrays?
+   > One dimensional array
+   >Two dimensional array / Multidimensional Array
+   >Three Dimensional Array / Multidimensional Array
+
+3. 	How do you declare an array in different programming languages?
+ C , C++    :  data_type array_name[arra_size];
+ C#, Java   :  data_type[] array_name = new data_type[array_size];
+ Python     :  value=[value1,value2,..]  or value=[]
+ PHP        :  $value = array(value1,value2,...)
+
+4. How do you access an element in an array?
+    Each element can be accessed directly by only using its index number. Index Value starts with ‘0’.
+    Example:
+    a=[1,2,3,4,5,6]
+    print(a[3])
+
+5. How do you iterate through an array?
+     It can be done by using for loop and while loop.
+      forloop:    array=[10,20,30,40,50]
+                      for i in array:
+                        print(i)
+ 
+      Whileloop:
+                         i=0
+                         while(i<len(array)):
+                               print(array[i])
+                               i += 1
+6. How do you find the sum of all elements in an array?
+    To find the sum of all elements in an array, you can use a loop to iterate through each element and add them together.
+Example: 
+arr = [10, 20, 30, 40, 50]
+sum= 0
+for i in arr:
+     sum += i
+print(sum) 
+
+7. How do you find the average of all elements in an array?
+    Sum up all the elements and then divide the sum by the number of elements in the array.
+   Example: 
+   array=[1,2,3,4,5]
+   print(sum(array)/len(array))
+    Output: 3
+
+8. How do you find the maximum element in an array?
+    We can use the built-in max() function.
+    arr=[20,40,50,10,90]
+    print(max(arr))
+    Output: 90
+
+9. How do you find the minimum element in an array?
+    We can use the built-in min() function.
+     arr=[20,40,50,10,90]
+     print(min(arr))
+    Output: 10
+
+10. How do you check if an element exists in an array?
+       arr=[10,20,30,40,50]
+        element=30
+        if element in arr:
+             print('exists')
+         else: 
+              print('not exists')
+       output: exists
+
+11. How do you sort an array?
+      arr=[20,50,70,40,10]
+      print(arr.sort())
+      Output: [10, 20, 40, 50, 70]
+
+12. How do you search an array for a given value?
+       arr=[10,20,30,40,50]
+        k=30
+        if element in arr:
+             print('exists')
+         else: 
+              print('not exists')
+       Output: exists
+
+13. How do you rotate an array?
+  Using Slicing:
+     arr=[20,50,70,40,10]
+      k=1
+      print(arr[k:]+arr[:k])
+      Output: [50,70, 40, 10, 20]
+
+
+14. How do you reverse an array?
+  Using Slicing:
+     arr=[20,50,70,40,10]
+     print(arr[::-1])
+     Output: [10, 40, 70, 50, 20]
+  Using reverse()method:
+      arr=[20,50,70,40,10]
+      print(arr.reverse())
+      Output: [10,40,70,50,20]
+
+15. How do you remove duplicates from an array?
+      The set() data structure automatically eliminates duplicates because it only stores unique elements.
+    arr=[2,4,6,8,0,1,3,2,4,5,7,8]
+    print(set(arr))
+    Output: [0,1,2,3,4,5,6,7,8]
+     
+
+
+
+
+
+
+
+
+
+
+
