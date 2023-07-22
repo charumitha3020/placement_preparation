@@ -1,0 +1,153 @@
+22-07-23
+
+1) ANAGRAM
+
+Input 1: 1st string
+Input 2: 2nd string
+
+Output:
+(If they are anagrams, the function will return ‘yes’. Otherwise, it will return ‘no’.)
+
+Example
+
+Input 1: Listen
+Input 2: Silent
+
+Output:
+Yes
+
+Explanation
+
+Listen and Silent are anagrams (an anagram is a word formed by rearranging the letters of the other word).
+CODE:
+s1=input()
+s2=input()
+a=sorted(s1)
+b=sorted(s2)
+if a==b:
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+OUTPUT:
+listen
+silent
+Anagram
+----------------------------------------------------------------------------------------
+2)  PRODUCT SMALL PAIR
+
+This function accepts the integers sum and arr. It is used to find the arr(j) and arr(k), where k ! = j. arr(j) and arr(k) should be the smallest elements in the array.
+
+Keep this in mind:
+
+If n<2 or empty, return –1.
+If these pairs are not found, then return to zero.
+Make sure all the values are within the integer range.
+ 
+Example
+
+Input:
+Sum: 9
+Arr: 5 4 2 3 9 1 7
+
+Output:
+2
+
+Explanation
+
+From the array of integers, we have to select the two smallest numbers, i.e 2 and 1. Sum of these two (2 + 1) = 3. This is less than 9 (3 < 9). The product of these two is 2 (2 x 1 = 2) Hence the output is integer 2.
+
+Sample input:
+Sum: 4
+Arr: 9 8 –7 3 9 3
+
+Sample output:
+–21
+
+CODE:
+arr=list(map(int,input().split( )))
+sum=int(input("Enter the sum:"))
+n=len(arr)
+a=sorted(arr)
+if n<2:
+    print('-1')
+if a[0]+a[1]<sum:
+    print(a[0]*a[1])
+else:
+    print(0)
+------------------------------------------------------
+
+3) REPLACE CHARACTER
+The given function has a string (str) and two characters, ch1 and ch2. Execute the function in such a way that str returns to its original string, and all the events in ch1 are replaced by ch2, and vice versa.
+Replacecharacter(Char str1, Char ch1, Int 1, Char ch2)
+
+Assumption
+
+This string has only alphabets that are in lower case.
+
+Example
+
+Input:
+str: apples
+ch1: a
+ch2: p
+
+Output:
+paales
+
+Explanation
+All the ‘a’ in the string is replaced with ‘p’. And all the ‘p’s are replaced with ‘a’.
+CODE:
+s=input("Enter the string:")
+ch1=input("Enter 1st charcater:")
+ch2=input("Enter 2nd character:")
+rep=" "
+for i in s:
+    if i==ch1:
+        rep+=ch2
+    elif i==ch2:
+        rep+=ch1
+    else:
+        rep+=i
+print(rep)
+----------------------------------------------------
+4) CALCULATE THE SUM OF NUMBERS BETWEEN TWO NUMBERS DIVISIBLE BY 3 AND 5
+Perform the function Int calculate(int m, int n). This function needs two positive integers.
+Calculate the sum of numbers between these two numbers that are divisible by 3 and 5.
+Assumption
+m > n > = 0
+
+Example
+
+Input:
+m: 12
+n: 50
+
+Output:
+90
+
+Explanation
+The numbers between 12 and 50 that are divisible by 3 and 5 are 15, 30, and 45. The sum of these numbers is 90.
+
+Sample input:
+m: 100
+n: 160
+
+Sample output:
+405
+
+CODE:
+
+m=int(input("Enter the number:"))
+n=int(input("Enter the number:"))
+sum=0
+for i in range(m,n):
+    if i%3==0 and i%5==0:
+        sum+=i
+print(sum)
+        
+    
+    
+
+
+
