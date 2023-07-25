@@ -42,4 +42,29 @@ Enter the character:b
 
 -------------------------------------------------------------------
 3) Write a program to find all the roots of a quadratic equation.
+CODE:
+import math
+a=int(input("Enter value of a: "))
+b=int(input("Enter value of b: "))
+c=int(input("Enter value of c: "))
+r1,r2=0,0
+x=b*b-(4*a*c)
+s=math.sqrt(abs(x))
+if x>0:
+    r1=((-b+s)/(2*a))
+    r2=((-b-s)/(2*a))
+    print(r1)
+    print(r2)
+elif x==0:
+    print((-b/(2*a)))
+else:
+    print((-b/(2*a))," + i ",s)
+    print((-b/(2*a))," - i ",s)
+
+Output:
+Enter value of a: 5
+Enter value of b: 6
+Enter value of c: 7
+-0.6  + i  10.198039027185569
+-0.6  - i  10.198039027185569
 
