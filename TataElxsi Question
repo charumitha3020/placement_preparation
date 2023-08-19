@@ -1,0 +1,30 @@
+19-8-23
+
+1. Problem Statement :
+
+You have write a function that accepts, a string which length is “len”, the string has some “#”, in it you have to move all the hashes to the front of the string and return the whole string back and print it.
+
+char* moveHash(char str[],int n);
+
+Example :
+Sample Test Case
+Input :
+Move#Hash#to#Front
+Output :
+###MoveHashtoFront
+CODE:
+s=input()
+a=''
+b=''
+for i in s:
+    if i=='#':
+        a+=i
+    else:
+        b+=i
+print(a+b)
+    
+output:
+abcd###efgh###ijkl###
+#########abcdefghijkl
+
+2.
